@@ -1,19 +1,93 @@
-08. Write
-a program to check the palindrome of the given string. (use in-built
-Function as well loop)  - 10 Points
+import java.util.Scanner;
+
+// 09. Write a program to perform any 4 operations on a one-dimensional array.
+// (sorting, searching, minimum, maximum, insertion, deletion, merging two arrays) 
 
 
+public class App3 {
+     
+    // Minimum value from array 
+    static int minimum(int [] array){
+        int min = array[0];
+        for(int i = 0; i<array.length; i++){
+            if(min > array[i]){
+                min = array[i];
+            }
+            
+        }
+        return min;
+    }
 
-11. Write a program to multiply two matrix.  - 10 Points
+    // Maximum value from array 
+    static int maximum(int [] array){
+        int max = array[0];
+        for(int i = 0; i<array.length; i++){
+            if(max < array[i]){
+                 max = array[i];
+            }
+            
+        }
+        return max;
+    }
 
+    // Searching in the array 
+     static void searchelement(int [] array){
+        int flag = 0;
+        System.out.println("Enter the number you want to search: ");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int i = 0;
+        while(i<=array.length){
+            if(num == array[i]){
+                flag = 1;
+                break;
+            }
+            else{
+               i++;
+            }
+        }
 
-Completed --
-12. String Operation using String Functions.  - 10 Points
+        if(flag == 1){
+            System.out.printf("Element %d found at index %d " , num ,  i);
+        }
+        else if(flag == 0){
+            System.out.println("Enterred element does not exist into the array");
+        }
 
-10.  Write a program that creates and initializes a four integer element array. Calculate and display the average of its value.  - 10 Points
+     }
+    
+     
+     public static void main(String[] args) {
+        
+        System.out.printf("Enter the size of the array: ");
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
 
-09. Write
-a program to perform any 4 operations on a one-dimensional array.
-(sorting, searching, minimum, maximum, insertion, deletion, merging two
-arrays) Use
-a switch case for the selection of choice.   - 10 Points
+        int [] array = new int[size];
+        // System.out.println(array.length);
+
+        // Taking input in array 
+        System.out.println("Enter the elements of the array: ");
+        for(int i = 0; i<array.length; i++){
+            array[i] = sc.nextInt();
+        }
+        System.out.println("Enter 1 for Minimum , number 2 for Maximum ,3 for Searching the element ");
+        int key = sc.nextInt();
+        switch (key) {
+            case 1:
+            System.out.println("Minimum value in the array is: " + minimum(array));
+                 break;
+            case 2:
+            System.out.println("Maximu value in the array is: " + maximum(array));
+            break;
+            case 3:
+            searchelement(array);
+            break;
+            default:
+            System.out.println("Thank you!!");
+                break;
+        }
+       
+    }
+}
+ 
