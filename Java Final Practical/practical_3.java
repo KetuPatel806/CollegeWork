@@ -1,5 +1,5 @@
 import java.util.Scanner; 
-public class Practical_3{ 
+public class practical_3{ 
 public static void main(String args[]) { 
 int n1=0,n2=1,n3,i,count; 
 Scanner SC=new Scanner(System.in); 
